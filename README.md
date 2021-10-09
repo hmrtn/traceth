@@ -11,8 +11,8 @@
 A convienient way to quickly visualize the difference in traces is to use the included `trace.go` program with a transaction hash, say this one - `0xbe811e3a5aea163edfa38f19e2a15eafc943c3e31101fe415eedf5c1337c73ec`. If we run the `trace.go`, an output of highlighted comparisons is shown and the trace dumps are seperately stored. You will need access to an archive node with an enabled JSON RPC API for each client comparison.
 
 ```bash
-git clone
-cd
+git clone https://github.com/hansmrtn/evm-tracing-comparison.git
+cd evm-tracing-comparison
 go run trace.go
 ```
 
