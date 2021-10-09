@@ -32,7 +32,7 @@ func requestTrace(url, data string) []byte {
 	return bodyText
 }
 
-func nethermindRpcTrace(url string, data string, tx string) []byte {
+func nethermindRpcTrace(url, data, tx string) []byte {
 	fmt.Printf("\nNethermind Trace Tx: %s", tx)
 	trace := requestTrace(url, data)
 	filename := "nethermind_trace.json"
@@ -46,7 +46,7 @@ func nethermindRpcTrace(url string, data string, tx string) []byte {
 	return trace
 }
 
-func erigonRpcTrace(url string, data string, tx string) []byte {
+func erigonRpcTrace(url, data, tx string) []byte {
 	fmt.Printf("\nErigon Trace Tx: %s", tx)
 	trace := requestTrace(url, data)
 	filename := "erigon_trace.json"
