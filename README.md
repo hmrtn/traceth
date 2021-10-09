@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-A convienient way to quickly visualize the difference in traces is to use the included `trace.go` program with a transaction hash, say this one - `0xbe811e3a5aea163edfa38f19e2a15eafc943c3e31101fe415eedf5c1337c73ec`. If we run the `trace.go`, an output of a highlighted trace is shown and are seperately stored. You will need access to an archive node with an enabled JSON RPC API for each client comparison.
+A convenient way to quickly visualize the difference in traces is to use the included `trace.go` program with a transaction hash, say this one - `0xbe811e3a5aea163edfa38f19e2a15eafc943c3e31101fe415eedf5c1337c73ec`. If we run the `trace.go`, an output of a highlighted trace is shown and is separately stored. You will need access to an archive node with an enabled JSON RPC API for each client comparison.
 
 ```bash
 git clone https://github.com/hansmrtn/evm-tracing-comparison.git
@@ -18,6 +18,6 @@ go run trace.go
 
 ### Details
 
-Any transaction on an EVM compatible protocol that involves a contract address can execute arbitrarily complex instructions, including acting on previously stored data with other accounts and addresses. The receipt of a transaction contains a status code indicating the its success or failure, but no other information relevant to the executions context. Hence it can be necessary to ask a client/node to trace a transaction by re-executing the the contract instructions and parsing the transactions in a useful structure to understand what (if any) transactions, modifications, and external code were invoked. The issue with this is the tracing modes and format is fragmented amongst popular clients.
+Any transaction on an EVM compatible protocol that involves a contract address can execute arbitrarily complex instructions, including acting on previously stored data with other accounts and addresses. The receipt of a transaction contains a status code indicating its success or failure, but no other information relevant to the context of the execution. Hence it can be necessary to ask a client/node to trace a transaction by re-executing the contract instructions and parsing the transactions in a useful structure to understand what (if any) transactions, modifications, and external code were invoked. The issue with this is the tracing modes and format is fragmented amongst popular clients.
 
-This project is meant to serve as a repository of information about each client and it's tracing APIs with the goal of eventually standardizing key formats.
+This project is meant to serve as a repository of information about each client and its tracing APIs to eventually standardize key trace formats.
