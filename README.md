@@ -5,6 +5,7 @@
 | go-ethereum | [View](https://github.com/ethereum/go-ethereum/blob/ee120ef865e9468fef0bbb0a0bcffba93e3e358e/eth/tracers/api.go#757)              |                                            |
 | Nethermind  | [View](https://docs.nethermind.io/nethermind/nethermind-utilities/cli/debug#debug-tracetransaction)                               | [View](./nethermind/nethermind_trace.json) |
 | Erigon      | [View](https://github.com/ledgerwatch/erigon/blob/5ca558c6670dd96afac472ef573152dda97fc866/cmd/rpcdaemon/commands/tracing.go#L23) | [View](./erigon/erigon_trace.json)         |
+| Besu        | [View](https://besu.hyperledger.org/en/stable/Reference/API-Methods/#debug_tracetransaction)                                      |                                            |
 
 ## Getting Started
 
