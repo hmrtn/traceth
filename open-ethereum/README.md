@@ -1,2 +1,2 @@
 # ~~Open Ethereum Tracing~~
-DEPRECTED CLIENT
+DEPRECATED CLIENT
