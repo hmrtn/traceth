@@ -17,8 +17,11 @@ package cmd
 
 import (
 	"fmt"
+	"log"
+	"os"
 
 	"github.com/hansmrtn/tracing-apis/tracer/utils"
+	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -37,7 +40,7 @@ var nethermindCmd = &cobra.Command{
 			if url != "" {
 				trace = requestNethermindTrace(url, tx)
 			} else {
-				trace = requestNethermindTrace("https://api.archivenode.io/n21le9m5ogypuubc2hdh8n21le9vhv6n/nethermind", tx)
+				trace = requestNethermindTrace(os.Getenv("NETHERMIND_API"), tx)
 			}
 			if filename != "" {
 				utils.Save(filename, trace)
@@ -56,6 +59,10 @@ func init() {
 	nethermindCmd.PersistentFlags().String("tx", "", "Transaction Hash")
 	nethermindCmd.PersistentFlags().String("url", "", "JSON RPC API url")
 	nethermindCmd.PersistentFlags().String("filename", "", "Save Response to filename")
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 }
 
 func requestNethermindTrace(url, tx string) []byte {

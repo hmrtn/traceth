@@ -17,8 +17,11 @@ package cmd
 
 import (
 	"fmt"
+	"log"
+	"os"
 
 	"github.com/hansmrtn/tracing-apis/tracer/utils"
+	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -37,7 +40,7 @@ var erigonCmd = &cobra.Command{
 			if url != "" {
 				trace = requestErigonTrace(url, tx)
 			} else {
-				trace = requestErigonTrace("https://api.archivenode.io/n21le9m5ogypuubc2hdh8n21le9vhv6n/erigon", tx)
+				trace = requestErigonTrace(os.Getenv("ERIGON_API"), tx)
 			}
 			if filename != "" {
 				utils.Save(filename, trace)
@@ -56,6 +59,10 @@ func init() {
 	erigonCmd.PersistentFlags().String("tx", "", "Transaction Hash")
 	erigonCmd.PersistentFlags().String("url", "", "JSON RPC API url")
 	erigonCmd.PersistentFlags().String("filename", "", "Save Response to filename")
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 }
 
 func requestErigonTrace(url, tx string) []byte {

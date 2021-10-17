@@ -9,12 +9,14 @@
 
 ## Getting Started
 
-A convenient way to quickly visualize the difference in traces is to use the included `trace.go` program with a transaction hash, say this one - `0xbe811e3a5aea163edfa38f19e2a15eafc943c3e31101fe415eedf5c1337c73ec`. If we run the `trace.go`, an output of a highlighted trace is shown and is separately stored. You will need access to an archive node with an enabled JSON RPC API for each client comparison.
-
 ```bash
-git clone https://github.com/hansmrtn/evm-tracing-comparison.git
-cd evm-tracing-comparison
-go run trace.go
+git clone https://github.com/hansmrtn/tracing-apis.git
+cd tracing-apis/tracer
+go install tracer.go
+```
+
+```
+tracer --help
 ```
 
 ### Details
@@ -23,4 +25,4 @@ Any transaction on an EVM compatible protocol that involves a contract address c
 
 This project is meant to serve as a repository of information about each client and its tracing APIs to eventually standardize key trace formats.
 
-This is in response to [cohort-one Issue #43](https://github.com/ethereum-cdap/cohort-one/issues/43). 
+This is in response to [cohort-one Issue #43](https://github.com/ethereum-cdap/cohort-one/issues/43).
